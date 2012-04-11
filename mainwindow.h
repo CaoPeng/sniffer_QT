@@ -31,11 +31,15 @@ private slots:
     void newFile();
     void selectCard();
     void about();
+    /////////////2012-4-11 itemviews
+    void openFile();
+    /////////////2012-4-11 itemviews
 
 private:
     QString dev;
     /////////////2012-4-11 itemviews
     DomModel *model;
+    QString xmlPath;
     /////////////2012-4-11 itemviews
 
     Ui::MainWindow *ui;

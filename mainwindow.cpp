@@ -4,6 +4,9 @@
 /////////////2012-4-11 itemviews
 #include "dommodel.h"
 #include "mainwindow.h"
+#include <QDomDocument>
+ #include <QFile>
+ #include <QtGui>
 /////////////2012-4-11 itemviews
 #include <QTextBrowser>
 
@@ -46,7 +49,10 @@ void MainWindow::createActions()
     newAction->setIcon(QIcon(":/images/new.png"));
     newAction->setShortcut(QKeySequence::New);
     newAction->setStatusTip(tr("New a new MessageBox..."));
-    connect(newAction,SIGNAL(triggered()),this,SLOT(newFile()));
+//    connect(newAction,SIGNAL(triggered()),this,SLOT(newFile()));
+    /////////////2012-4-11 itemviews
+    connect(newAction,SIGNAL(triggered()),this,SLOT(openFile()));
+    /////////////2012-4-11 itemviews
 
     openAction = new QAction(tr("&open"),this);
     openAction->setIcon(QIcon(":/images/open.png"));
@@ -199,3 +205,26 @@ void MainWindow::selectCard()
     dev = dialog.devs;
     ui->cardLabel->setText(dev);
 }
+
+/////////////2012-4-11 itemviews
+void MainWindow::openFile(){
+    QString filePath = QFileDialog::getOpenFileName(this, tr("Open File"),
+             xmlPath, tr("XML files (*.xml);;HTML files (*.html);;"
+                         "SVG files (*.svg);;User Interface files (*.ui)"));
+
+         if (!filePath.isEmpty()) {
+             QFile file(filePath);
+             if (file.open(QIODevice::ReadOnly)) {
+                 QDomDocument document;
+                 if (document.setContent(&file)) {
+                     DomModel *newModel = new DomModel(document, this);
+                     ui->treeView->setModel(newModel);
+                     delete model;
+                     model = newModel;
+                     xmlPath = filePath;
+                 }
+                 file.close();
+             }
+         }
+}
+/////////////2012-4-11 itemviews

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'startdialog.ui'
 **
-** Created: Wed Apr 11 14:18:05 2012
+** Created: Wed Apr 11 15:50:17 2012
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

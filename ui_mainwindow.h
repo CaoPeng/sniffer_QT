@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Wed Apr 11 14:18:05 2012
+** Created: Wed Apr 11 15:50:17 2012
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -44,7 +44,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(600, 400);
+        MainWindow->resize(643, 400);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         cardLabel = new QLabel(centralWidget);
@@ -58,14 +58,14 @@ public:
         stopButton->setGeometry(QRect(300, 20, 93, 27));
         textBrowser = new QTextBrowser(centralWidget);
         textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
-        textBrowser->setGeometry(QRect(350, 80, 221, 192));
+        textBrowser->setGeometry(QRect(570, 10, 41, 41));
         treeView = new QTreeView(centralWidget);
         treeView->setObjectName(QString::fromUtf8("treeView"));
-        treeView->setGeometry(QRect(55, 90, 271, 192));
+        treeView->setGeometry(QRect(25, 60, 581, 311));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 600, 25));
+        menuBar->setGeometry(QRect(0, 0, 643, 25));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'startdialog.h'
 **
-** Created: Wed Apr 11 14:18:12 2012
+** Created: Wed Apr 11 15:50:26 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.2)
 **
 ** WARNING! All changes made in this file will be lost!
