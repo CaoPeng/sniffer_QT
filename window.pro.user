@@ -76,7 +76,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-4VCqFY36Qj,guid=5ae024d7a05fea7566608fbe4f462b93</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-ddMbSAl5AU,guid=875e47c822efd055dfb33c844f85124a</value>
     <value type="QString">DEFAULTS_PATH=/usr/share/gconf/gnome.default.path</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
@@ -84,34 +84,35 @@
     <value type="QString">GDM_KEYBOARD_LAYOUT=us</value>
     <value type="QString">GDM_LANG=en_US.utf8</value>
     <value type="QString">GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/qtcreator.desktop</value>
-    <value type="QString">GIO_LAUNCHED_DESKTOP_FILE_PID=22062</value>
+    <value type="QString">GIO_LAUNCHED_DESKTOP_FILE_PID=3239</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-W6CJR0</value>
-    <value type="QString">GNOME_KEYRING_PID=1368</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-dKCAXL</value>
+    <value type="QString">GNOME_KEYRING_PID=1668</value>
     <value type="QString">GTK_IM_MODULE=ibus</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
     <value type="QString">HOME=/home/caopeng</value>
     <value type="QString">LANG=en_US.utf8</value>
     <value type="QString">LANGUAGE=en</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator</value>
+    <value type="QString">LIBGL_DRIVERS_PATH=/usr/lib/fglrx/dri</value>
     <value type="QString">LOGNAME=caopeng</value>
     <value type="QString">MANDATORY_PATH=/usr/share/gconf/gnome.mandatory.path</value>
     <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-caopeng</value>
-    <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/caopeng/android-sdks/tools:/home/caopeng/android-sdks/platform-tools</value>
+    <value type="QString">PATH=/usr/bin:/home/caopeng/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/caopeng/android-sdks/tools:/home/caopeng/android-sdks/platform-tools</value>
     <value type="QString">PWD=/home/caopeng</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
     <value type="QString">QT_IM_MODULE=xim</value>
-    <value type="QString">SESSION_MANAGER=local/laptop:@/tmp/.ICE-unix/1386,unix/laptop:/tmp/.ICE-unix/1386</value>
+    <value type="QString">SESSION_MANAGER=local/laptop:@/tmp/.ICE-unix/1686,unix/laptop:/tmp/.ICE-unix/1686</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1426</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-W6CJR0/ssh</value>
+    <value type="QString">SSH_AGENT_PID=1735</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-dKCAXL/ssh</value>
     <value type="QString">USER=caopeng</value>
     <value type="QString">USERNAME=caopeng</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-caopeng-33Lrnd/database</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-caopeng-o36Oji/database</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg/xdg-gnome:/etc/xdg</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=718ad84a19954c3a0ab6967a4eb82baa-1329998739.191100-454971488</value>
+    <value type="QString">XDG_SESSION_COOKIE=718ad84a19954c3a0ab6967a4eb82baa-1334121033.983326-1850343453</value>
     <value type="QString">XMODIFIERS=@im=ibus</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
@@ -131,7 +132,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-4VCqFY36Qj,guid=5ae024d7a05fea7566608fbe4f462b93</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-ddMbSAl5AU,guid=875e47c822efd055dfb33c844f85124a</value>
     <value type="QString">DEFAULTS_PATH=/usr/share/gconf/gnome.default.path</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
@@ -139,34 +140,35 @@
     <value type="QString">GDM_KEYBOARD_LAYOUT=us</value>
     <value type="QString">GDM_LANG=en_US.utf8</value>
     <value type="QString">GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/qtcreator.desktop</value>
-    <value type="QString">GIO_LAUNCHED_DESKTOP_FILE_PID=22062</value>
+    <value type="QString">GIO_LAUNCHED_DESKTOP_FILE_PID=3239</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-W6CJR0</value>
-    <value type="QString">GNOME_KEYRING_PID=1368</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-dKCAXL</value>
+    <value type="QString">GNOME_KEYRING_PID=1668</value>
     <value type="QString">GTK_IM_MODULE=ibus</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
     <value type="QString">HOME=/home/caopeng</value>
     <value type="QString">LANG=en_US.utf8</value>
     <value type="QString">LANGUAGE=en</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator</value>
+    <value type="QString">LIBGL_DRIVERS_PATH=/usr/lib/fglrx/dri</value>
     <value type="QString">LOGNAME=caopeng</value>
     <value type="QString">MANDATORY_PATH=/usr/share/gconf/gnome.mandatory.path</value>
     <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-caopeng</value>
-    <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/caopeng/android-sdks/tools:/home/caopeng/android-sdks/platform-tools</value>
+    <value type="QString">PATH=/usr/bin:/home/caopeng/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/caopeng/android-sdks/tools:/home/caopeng/android-sdks/platform-tools</value>
     <value type="QString">PWD=/home/caopeng</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
     <value type="QString">QT_IM_MODULE=xim</value>
-    <value type="QString">SESSION_MANAGER=local/laptop:@/tmp/.ICE-unix/1386,unix/laptop:/tmp/.ICE-unix/1386</value>
+    <value type="QString">SESSION_MANAGER=local/laptop:@/tmp/.ICE-unix/1686,unix/laptop:/tmp/.ICE-unix/1686</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1426</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-W6CJR0/ssh</value>
+    <value type="QString">SSH_AGENT_PID=1735</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-dKCAXL/ssh</value>
     <value type="QString">USER=caopeng</value>
     <value type="QString">USERNAME=caopeng</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-caopeng-33Lrnd/database</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-caopeng-o36Oji/database</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg/xdg-gnome:/etc/xdg</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=718ad84a19954c3a0ab6967a4eb82baa-1329998739.191100-454971488</value>
+    <value type="QString">XDG_SESSION_COOKIE=718ad84a19954c3a0ab6967a4eb82baa-1334121033.983326-1850343453</value>
     <value type="QString">XMODIFIERS=@im=ibus</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
@@ -183,7 +185,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-4VCqFY36Qj,guid=5ae024d7a05fea7566608fbe4f462b93</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-ddMbSAl5AU,guid=875e47c822efd055dfb33c844f85124a</value>
     <value type="QString">DEFAULTS_PATH=/usr/share/gconf/gnome.default.path</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
@@ -191,34 +193,35 @@
     <value type="QString">GDM_KEYBOARD_LAYOUT=us</value>
     <value type="QString">GDM_LANG=en_US.utf8</value>
     <value type="QString">GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/qtcreator.desktop</value>
-    <value type="QString">GIO_LAUNCHED_DESKTOP_FILE_PID=22062</value>
+    <value type="QString">GIO_LAUNCHED_DESKTOP_FILE_PID=3239</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-W6CJR0</value>
-    <value type="QString">GNOME_KEYRING_PID=1368</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-dKCAXL</value>
+    <value type="QString">GNOME_KEYRING_PID=1668</value>
     <value type="QString">GTK_IM_MODULE=ibus</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
     <value type="QString">HOME=/home/caopeng</value>
     <value type="QString">LANG=en_US.utf8</value>
     <value type="QString">LANGUAGE=en</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator</value>
+    <value type="QString">LIBGL_DRIVERS_PATH=/usr/lib/fglrx/dri</value>
     <value type="QString">LOGNAME=caopeng</value>
     <value type="QString">MANDATORY_PATH=/usr/share/gconf/gnome.mandatory.path</value>
     <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-caopeng</value>
-    <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/caopeng/android-sdks/tools:/home/caopeng/android-sdks/platform-tools</value>
+    <value type="QString">PATH=/usr/bin:/home/caopeng/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/caopeng/android-sdks/tools:/home/caopeng/android-sdks/platform-tools</value>
     <value type="QString">PWD=/home/caopeng</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
     <value type="QString">QT_IM_MODULE=xim</value>
-    <value type="QString">SESSION_MANAGER=local/laptop:@/tmp/.ICE-unix/1386,unix/laptop:/tmp/.ICE-unix/1386</value>
+    <value type="QString">SESSION_MANAGER=local/laptop:@/tmp/.ICE-unix/1686,unix/laptop:/tmp/.ICE-unix/1686</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1426</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-W6CJR0/ssh</value>
+    <value type="QString">SSH_AGENT_PID=1735</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-dKCAXL/ssh</value>
     <value type="QString">USER=caopeng</value>
     <value type="QString">USERNAME=caopeng</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-caopeng-33Lrnd/database</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-caopeng-o36Oji/database</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg/xdg-gnome:/etc/xdg</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=718ad84a19954c3a0ab6967a4eb82baa-1329998739.191100-454971488</value>
+    <value type="QString">XDG_SESSION_COOKIE=718ad84a19954c3a0ab6967a4eb82baa-1334121033.983326-1850343453</value>
     <value type="QString">XMODIFIERS=@im=ibus</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">true</value>

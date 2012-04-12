@@ -7,11 +7,13 @@ SOURCES += main.cpp \
     mainwindow.cpp \
     startdialog.cpp \
     domitem.cpp \
-    dommodel.cpp
+    dommodel.cpp \
+    highlighter.cpp
 HEADERS += mainwindow.h \
     startdialog.h \
     domitem.h \
-    dommodel.h
+    dommodel.h \
+    highlighter.h
 FORMS += mainwindow.ui \
     startdialog.ui
 RESOURCES = mainwindow.qrc

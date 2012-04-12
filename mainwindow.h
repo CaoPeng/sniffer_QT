@@ -12,6 +12,11 @@ class QMenu;
 class QTreeView;
 class DomModel;
 /////////////2012-4-11 itemviews
+////2012-4-12 higlighter
+class Highlighter;
+////2012-4-12 higlighter
+class QProcess;
+////2012-4-12 add QProcess
 
 namespace Ui {
     class MainWindow;
@@ -34,6 +39,12 @@ private slots:
     /////////////2012-4-11 itemviews
     void openFile();
     /////////////2012-4-11 itemviews
+    ////2012-4-12 add QProcess
+    /*
+    void runProcess();
+    void readOutput();
+    */
+    ////2012-4-12 add QProcess
 
 private:
     QString dev;
@@ -41,12 +52,24 @@ private:
     DomModel *model;
     QString xmlPath;
     /////////////2012-4-11 itemviews
+    ////2012-4-12 higlighter
+    Highlighter *highlighter;
+    ////2012-4-12 higlighter
+    ////2012-4-12 add Process
+    /*
+    QProcess *cmd;
+    QString output;
+    */
+    ////2012-4-12 add Process
 
     Ui::MainWindow *ui;
     void createActions();
     void createMenus();
     void createToolBars();
     bool okToContinue();
+    ////2012-4-12 higlighter
+    void stepEditor();
+    ////2012-4-12 higlighter
 
     //Menu
     QMenu *fileMenu;

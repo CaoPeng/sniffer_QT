@@ -5,9 +5,16 @@
 #include "dommodel.h"
 #include "mainwindow.h"
 #include <QDomDocument>
- #include <QFile>
- #include <QtGui>
+#include <QFile>
+#include <QtGui>
 /////////////2012-4-11 itemviews
+////2012-4-12 higlighter
+#include "highlighter.h"
+////2012-4-12 higlighter
+////2012-4-12 add QProcess
+//#include "process.h"
+////2012-4-12 add QProcess
+
 #include <QTextBrowser>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -18,12 +25,21 @@ MainWindow::MainWindow(QWidget *parent) :
     createActions();
     createMenus();
     createToolBars();
+    stepEditor();
     connect(ui->startButton,SIGNAL(clicked()),this,SLOT(selectCard()));
 
-    /////////////2012-4-11 itemviews
+    ////2012-4-12 add QProcess
+    /*
+    connect(ui->stopButton,SIGNAL(clicked()),this,SLOT(runProcess()));
+    connect(cmd, SIGNAL(readyRead()), this, SLOT(readOutput()));
+    */
+    ////2012-4-12 add QProcess
+    ////2012-4-11 itemviews
     model = new DomModel(QDomDocument(), this);
-    ui->treeView->setModel(model);
-    /////////////2012-4-11 itemviews
+    ////2012-4-12 change the treeView to textBrowser
+    //ui->treeView->setModel(model);
+    ////2012-4-12 change the treeView to textBrowser
+    ////2012-4-11 itemviews
 }
 
 MainWindow::~MainWindow()
@@ -218,7 +234,9 @@ void MainWindow::openFile(){
                  QDomDocument document;
                  if (document.setContent(&file)) {
                      DomModel *newModel = new DomModel(document, this);
-                     ui->treeView->setModel(newModel);
+                     ////2012-4-12 change the treeView to textBrowser
+                     //ui->treeView->setModel(newModel);
+                     ////2012-4-12 change the treeView to textBrowser
                      delete model;
                      model = newModel;
                      xmlPath = filePath;
@@ -228,3 +246,35 @@ void MainWindow::openFile(){
          }
 }
 /////////////2012-4-11 itemviews
+
+////2012-4-12 higlighter
+void MainWindow::stepEditor(){
+    QFont font;
+    font.setFamily("Courier");
+    font.setFixedPitch(true);
+    font.setPointSize(10);
+
+    ui->textBrowser->setFont(font);
+
+   // highlighter = new Highlighter(editor->document());
+    highlighter = new Highlighter(ui->textBrowser->document());
+}
+////2012-4-12 higlighter
+
+////2012-4-12 add QProcess
+/*
+void MainWindow::runProcess(){
+    cmd = new QProcess;
+
+    cmd->start("sniff");
+    output = tr("");
+    ui->textBrowser->setText(output);
+   // outputEdit->setText(output);
+}
+void MainWindow::readOutput(){
+    output += cmd->readAll();
+    ui->textBrowser->setText(output);
+    //outputEdit->setText(output);
+}
+*/
+////2012-4-12 add QProcess
