@@ -6,7 +6,7 @@ startDialog::startDialog(QWidget *parent) :
 {
     setupUi(this);
     ifSelectCard = false;
-    //connect(startButton,)
+    devs = "etho";
     connect(startButton,SIGNAL(clicked()),this,SLOT(comboBoxChange()));
     connect(comboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(setDevice(int)));
 }
@@ -40,14 +40,6 @@ void startDialog::comboBoxChange()
         comboBox->clear();
     }
     if(pcap_findalldevs(&alldevs,errbuf) == 1){
-        /*
-        QMessageBox::about(this,tr("About This Dialog"),
-                               tr("<h2>Version1.0</h2>"
-                                  "<p>Copyright &copy;2011 Software Inc."
-                                  "<p>pcap_findalldevc() error"
-                                  "<p>Please run again..."));
-
-                                 */
          QMessageBox msgBox;
          msgBox.setText("The document has been modified.");
          msgBox.exec();

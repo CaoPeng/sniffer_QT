@@ -20,23 +20,36 @@
       <item>
        <widget class="QLabel" name="cardLabel">
         <property name="text">
-         <string>TextLabel</string>
+         <string>eth0</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="startButton">
         <property name="text">
-         <string>&amp;Start</string>
+         <string>&amp;开始</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="stopButton">
+       <widget class="QLabel" name="numberLabel">
         <property name="text">
-         <string>&amp;Stop</string>
+         <string>个数:</string>
         </property>
        </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="numberLineEdit"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="portLabel">
+        <property name="text">
+         <string>端口:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="portLineEdit"/>
       </item>
       <item>
        <spacer name="horizontalSpacer">
@@ -50,6 +63,13 @@
          </size>
         </property>
        </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="stopButton">
+        <property name="text">
+         <string>&amp;停止</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>

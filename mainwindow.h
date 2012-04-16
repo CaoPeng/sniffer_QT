@@ -5,7 +5,6 @@
 #include <QSplashScreen>
 #include <QString>
 #include <QtGui/QTextBrowser>
-#include <pcap.h>
 #include <QtGui/QTextBrowser>
 /////////////2012-4-11 itemviews
 class QMenu;
@@ -14,7 +13,7 @@ class DomModel;
 /////////////2012-4-11 itemviews
 ////2012-4-12 higlighter
 class Highlighter;
-////2012-4-12 higlighter
+////2012-4-12 add QProcess
 class QProcess;
 ////2012-4-12 add QProcess
 
@@ -39,12 +38,10 @@ private slots:
     /////////////2012-4-11 itemviews
     void openFile();
     /////////////2012-4-11 itemviews
-    ////2012-4-12 add QProcess
-    /*
+    ////2012-4-16
+    void writeToTextBrowser();
     void runProcess();
-    void readOutput();
-    */
-    ////2012-4-12 add QProcess
+    ////2012-4-16
 
 private:
     QString dev;
@@ -55,12 +52,11 @@ private:
     ////2012-4-12 higlighter
     Highlighter *highlighter;
     ////2012-4-12 higlighter
-    ////2012-4-12 add Process
-    /*
+
+    ////2012-4-16
     QProcess *cmd;
-    QString output;
-    */
-    ////2012-4-12 add Process
+    QString strData;
+    ////2012-4-16
 
     Ui::MainWindow *ui;
     void createActions();

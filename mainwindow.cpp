@@ -8,12 +8,10 @@
 #include <QFile>
 #include <QtGui>
 /////////////2012-4-11 itemviews
+
 ////2012-4-12 higlighter
 #include "highlighter.h"
 ////2012-4-12 higlighter
-////2012-4-12 add QProcess
-//#include "process.h"
-////2012-4-12 add QProcess
 
 #include <QTextBrowser>
 
@@ -21,11 +19,13 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+   this->setWindowIcon(QIcon("a.png"));
     ui->setupUi(this);
     createActions();
     createMenus();
     createToolBars();
     stepEditor();
+    cmd = new QProcess;
     connect(ui->startButton,SIGNAL(clicked()),this,SLOT(selectCard()));
 
     ////2012-4-12 add QProcess
@@ -36,10 +36,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ////2012-4-12 add QProcess
     ////2012-4-11 itemviews
     model = new DomModel(QDomDocument(), this);
-    ////2012-4-12 change the treeView to textBrowser
-    //ui->treeView->setModel(model);
-    ////2012-4-12 change the treeView to textBrowser
     ////2012-4-11 itemviews
+    ////2012-4-16
+    connect(cmd,SIGNAL(readyRead()),this,SLOT(writeToTextBrowser()));
+    connect(ui->stopButton,SIGNAL(clicked()),this,SLOT(runProcess()));
+    ////2012-4-16
 }
 
 MainWindow::~MainWindow()
@@ -278,3 +279,28 @@ void MainWindow::readOutput(){
 }
 */
 ////2012-4-12 add QProcess
+
+////2012-4-16
+void MainWindow::writeToTextBrowser(){
+    strData+=cmd->readAll();
+    ui->textBrowser->append(strData);
+}
+void MainWindow::runProcess(){
+//    QStringList arguments;
+//         arguments << "-style" << "motif";
+//
+//         QProcess *myProcess = new QProcess(parent);
+//         myProcess->start(program, arguments);
+    QString program = "/bin/ls";
+    QStringList arguments;
+    QString countData;
+    QString portData;
+    countData = ui->numberLineEdit->text();
+    portData = ui->portLineEdit->text();
+    arguments<<"-"<<countData<<portData;
+   // ui->textBrowser->append(countData+portData);
+    cmd->start("./sniff");
+    strData=tr("");
+    ui->textBrowser->append(strData);
+}
+////2012-4-16
