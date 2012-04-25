@@ -20,7 +20,16 @@
       <item>
        <widget class="QLabel" name="cardLabel">
         <property name="text">
-         <string>eth0</string>
+         <string/>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="mainwindow.qrc">:/images/icon.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -50,6 +59,16 @@
       </item>
       <item>
        <widget class="QLineEdit" name="portLineEdit"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelFilter">
+        <property name="text">
+         <string>过滤:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="filterLineEdit"/>
       </item>
       <item>
        <spacer name="horizontalSpacer">
@@ -99,6 +118,8 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="mainwindow.qrc"/>
+ </resources>
  <connections/>
 </ui>

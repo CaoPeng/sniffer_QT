@@ -6,16 +6,13 @@
 #include <QString>
 #include <QtGui/QTextBrowser>
 #include <QtGui/QTextBrowser>
-/////////////2012-4-11 itemviews
-class QMenu;
-class QTreeView;
-class DomModel;
-/////////////2012-4-11 itemviews
+
 ////2012-4-12 higlighter
 class Highlighter;
 ////2012-4-12 add QProcess
 class QProcess;
 ////2012-4-12 add QProcess
+class QLineEdit;
 
 namespace Ui {
     class MainWindow;
@@ -35,23 +32,23 @@ private slots:
     void newFile();
     void selectCard();
     void about();
-    /////////////2012-4-11 itemviews
-    void openFile();
-    /////////////2012-4-11 itemviews
     ////2012-4-16
     void writeToTextBrowser();
     void runProcess();
     ////2012-4-16
+    ////2012-4-25 findText
+    void findText();
+    void findTextNext();
+    ////2012-4-25 findText
 
 private:
     QString dev;
-    /////////////2012-4-11 itemviews
-    DomModel *model;
-    QString xmlPath;
-    /////////////2012-4-11 itemviews
     ////2012-4-12 higlighter
     Highlighter *highlighter;
     ////2012-4-12 higlighter
+    ////2012-4-25 findText
+    QLineEdit *find_textLineEdit;
+    ////2012-4-25 findText
 
     ////2012-4-16
     QProcess *cmd;

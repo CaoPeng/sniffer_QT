@@ -1,14 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "startdialog.h"
-/////////////2012-4-11 itemviews
-#include "dommodel.h"
 #include "mainwindow.h"
 #include <QDomDocument>
 #include <QFile>
 #include <QtGui>
-/////////////2012-4-11 itemviews
-
 ////2012-4-12 higlighter
 #include "highlighter.h"
 ////2012-4-12 higlighter
@@ -28,19 +24,11 @@ MainWindow::MainWindow(QWidget *parent) :
     cmd = new QProcess;
     connect(ui->startButton,SIGNAL(clicked()),this,SLOT(selectCard()));
 
-    ////2012-4-12 add QProcess
-    /*
-    connect(ui->stopButton,SIGNAL(clicked()),this,SLOT(runProcess()));
-    connect(cmd, SIGNAL(readyRead()), this, SLOT(readOutput()));
-    */
-    ////2012-4-12 add QProcess
-    ////2012-4-11 itemviews
-    model = new DomModel(QDomDocument(), this);
-    ////2012-4-11 itemviews
-    ////2012-4-16
+
+    ////2012-4-16 QProcess
     connect(cmd,SIGNAL(readyRead()),this,SLOT(writeToTextBrowser()));
     connect(ui->stopButton,SIGNAL(clicked()),this,SLOT(runProcess()));
-    ////2012-4-16
+    ////2012-4-16 QProcess
 }
 
 MainWindow::~MainWindow()
@@ -67,9 +55,6 @@ void MainWindow::createActions()
     newAction->setShortcut(QKeySequence::New);
     newAction->setStatusTip(tr("New a new MessageBox..."));
 //    connect(newAction,SIGNAL(triggered()),this,SLOT(newFile()));
-    /////////////2012-4-11 itemviews
-    connect(newAction,SIGNAL(triggered()),this,SLOT(openFile()));
-    /////////////2012-4-11 itemviews
 
     openAction = new QAction(tr("&open"),this);
     openAction->setIcon(QIcon(":/images/open.png"));
@@ -104,6 +89,9 @@ void MainWindow::createActions()
     findAction = new QAction(tr("Find"),this);
     findAction->setIcon(QIcon(":/images/find.png"));
     findAction->setShortcut(QKeySequence::Find);
+    ////2012-4-25
+    connect(findAction,SIGNAL(triggered()),this,SLOT(findText()));
+    ////2012-4-25
 
     firstAction = new QAction(tr("First Packet"),this);
     firstAction->setIcon(QIcon(":/images/first.png"));
@@ -168,7 +156,10 @@ void MainWindow::createToolBars()
 {
     fileToolBar = addToolBar(tr("&File"));
     fileToolBar->addAction(newAction);
-    fileToolBar->addAction(openAction);
+    //fileToolBar->addAction(save)
+    ////2012-4-25
+    fileToolBar->addAction(findAction);
+    ////2012-4-25
     fileToolBar->addAction(saveAction);
 
     editToolBar = addToolBar(tr("&Edit"));
@@ -221,32 +212,8 @@ void MainWindow::selectCard()
     dialog.exec();
     dev = dialog.devs;
     ui->cardLabel->setText(dev);
+    ui->cardLabel->setCursor(Qt::SizeAllCursor);
 }
-
-/////////////2012-4-11 itemviews
-void MainWindow::openFile(){
-    QString filePath = QFileDialog::getOpenFileName(this, tr("Open File"),
-             xmlPath, tr("XML files (*.xml);;HTML files (*.html);;"
-                         "SVG files (*.svg);;User Interface files (*.ui)"));
-
-         if (!filePath.isEmpty()) {
-             QFile file(filePath);
-             if (file.open(QIODevice::ReadOnly)) {
-                 QDomDocument document;
-                 if (document.setContent(&file)) {
-                     DomModel *newModel = new DomModel(document, this);
-                     ////2012-4-12 change the treeView to textBrowser
-                     //ui->treeView->setModel(newModel);
-                     ////2012-4-12 change the treeView to textBrowser
-                     delete model;
-                     model = newModel;
-                     xmlPath = filePath;
-                 }
-                 file.close();
-             }
-         }
-}
-/////////////2012-4-11 itemviews
 
 ////2012-4-12 higlighter
 void MainWindow::stepEditor(){
@@ -262,45 +229,58 @@ void MainWindow::stepEditor(){
 }
 ////2012-4-12 higlighter
 
-////2012-4-12 add QProcess
-/*
-void MainWindow::runProcess(){
-    cmd = new QProcess;
-
-    cmd->start("sniff");
-    output = tr("");
-    ui->textBrowser->setText(output);
-   // outputEdit->setText(output);
-}
-void MainWindow::readOutput(){
-    output += cmd->readAll();
-    ui->textBrowser->setText(output);
-    //outputEdit->setText(output);
-}
-*/
-////2012-4-12 add QProcess
-
 ////2012-4-16
 void MainWindow::writeToTextBrowser(){
     strData+=cmd->readAll();
     ui->textBrowser->append(strData);
 }
 void MainWindow::runProcess(){
-//    QStringList arguments;
-//         arguments << "-style" << "motif";
-//
-//         QProcess *myProcess = new QProcess(parent);
-//         myProcess->start(program, arguments);
-    QString program = "/bin/ls";
-    QStringList arguments;
     QString countData;
     QString portData;
+    QString filterData;
+    QString argvExe = "./sniff";
+    QString argvK = " -k ";
+    QString argvN = " -n ";
+    QString argvF = " -f ";
     countData = ui->numberLineEdit->text();
     portData = ui->portLineEdit->text();
-    arguments<<"-"<<countData<<portData;
-   // ui->textBrowser->append(countData+portData);
-    cmd->start("./sniff");
+    filterData = ui->filterLineEdit->text();
+    QString myexe = argvExe+argvK+portData+argvN+countData+argvF+filterData;
+    //QString myexenew = "./test"+" -k"+portData+" -n "+countData+" -f ip";
+  //  QString myexe = "./test -k keyword -n 10 -f ip";
+    cmd->start(myexe);
     strData=tr("");
     ui->textBrowser->append(strData);
 }
 ////2012-4-16
+
+////2012-4-25 findText
+void MainWindow::findText(){
+    QDialog *findDlg = new QDialog(this);
+
+    //新建一个对话框，用于查找操作，this表明它的父窗口是MainWindow。
+    findDlg->setWindowTitle(tr("Find"));
+    //findDlg->setWindowTitle(tr(“查找”));
+    //设置对话框的标题
+    find_textLineEdit = new QLineEdit(findDlg);
+    //将行编辑器加入到新建的查找对话框中
+    QPushButton *find_Btn = new QPushButton(tr("Find Next"),findDlg);
+    //QPushButton *find_Btn = new QPushButton(tr(“查找下一个”),findDlg);
+    //加入一个“查找下一个”的按钮
+    QVBoxLayout* layout = new QVBoxLayout(findDlg);
+    layout->addWidget(find_textLineEdit);
+    layout->addWidget(find_Btn);
+    //新建一个垂直布局管理器，并将行编辑器和按钮加入其中
+    findDlg ->show();
+    connect(find_Btn,SIGNAL(clicked()),this,SLOT(findTextNext()));
+    //显示对话框
+}
+void MainWindow::findTextNext(){
+    QString findStr = find_textLineEdit->text();
+
+    if(!ui->textBrowser->find(findStr,QTextDocument::FindBackward)){
+        QMessageBox::warning(this,tr("Find"),tr("No Find %1")
+                             .arg(findStr));
+    }
+}
+////2012-4-25 findText
