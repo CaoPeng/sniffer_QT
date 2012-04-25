@@ -1,1 +1,4 @@
 Graphical interface with QT
+
+//2012-4-25
+增加了find函数，可以实现查找textBrowser当中的文本，
