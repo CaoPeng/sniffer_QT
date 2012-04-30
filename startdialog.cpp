@@ -6,7 +6,7 @@ startDialog::startDialog(QWidget *parent) :
 {
     setupUi(this);
     ifSelectCard = false;
-    devs = "etho";
+    devs = "eth0";
     connect(startButton,SIGNAL(clicked()),this,SLOT(comboBoxChange()));
     connect(comboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(setDevice(int)));
 }

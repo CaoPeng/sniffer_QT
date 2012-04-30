@@ -2,3 +2,5 @@ Graphical interface with QT
 
 //2012-4-25
 增加了find函数，可以实现查找textBrowser当中的文本，
+//2012-4-25
+修正了find函数，添加了next 和prevoius 两个按钮

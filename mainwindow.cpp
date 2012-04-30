@@ -22,13 +22,15 @@ MainWindow::MainWindow(QWidget *parent) :
     createToolBars();
     stepEditor();
     cmd = new QProcess;
-    connect(ui->startButton,SIGNAL(clicked()),this,SLOT(selectCard()));
+    connect(ui->selectCardButton,SIGNAL(clicked()),this,SLOT(selectCard()));
 
 
     ////2012-4-16 QProcess
     connect(cmd,SIGNAL(readyRead()),this,SLOT(writeToTextBrowser()));
-    connect(ui->stopButton,SIGNAL(clicked()),this,SLOT(runProcess()));
+    connect(ui->startButton,SIGNAL(clicked()),this,SLOT(runProcess()));
     ////2012-4-16 QProcess
+    connect(ui->stopButton,SIGNAL(clicked()),cmd,SLOT(kill()));
+
 }
 
 MainWindow::~MainWindow()
@@ -257,22 +259,24 @@ void MainWindow::runProcess(){
 ////2012-4-25 findText
 void MainWindow::findText(){
     QDialog *findDlg = new QDialog(this);
-
     //新建一个对话框，用于查找操作，this表明它的父窗口是MainWindow。
     findDlg->setWindowTitle(tr("Find"));
-    //findDlg->setWindowTitle(tr(“查找”));
-    //设置对话框的标题
+
+    QLabel *findLabel = new QLabel(tr("Find:"));
     find_textLineEdit = new QLineEdit(findDlg);
-    //将行编辑器加入到新建的查找对话框中
-    QPushButton *find_Btn = new QPushButton(tr("Find Next"),findDlg);
-    //QPushButton *find_Btn = new QPushButton(tr(“查找下一个”),findDlg);
+    QPushButton *find_Btn_Next = new QPushButton(tr("Next"),findDlg);
+    find_Btn_Next->setIcon(QIcon(":/images/next.png"));
+    QPushButton *find_Btn_Previous = new QPushButton(tr("Previous"),findDlg);
+    find_Btn_Previous->setIcon(QIcon(":/images/previous.png"));
     //加入一个“查找下一个”的按钮
-    QVBoxLayout* layout = new QVBoxLayout(findDlg);
+    QHBoxLayout* layout = new QHBoxLayout(findDlg);
+    layout->addWidget(findLabel);
     layout->addWidget(find_textLineEdit);
-    layout->addWidget(find_Btn);
+    layout->addWidget(find_Btn_Previous);
+    layout->addWidget(find_Btn_Next);
     //新建一个垂直布局管理器，并将行编辑器和按钮加入其中
     findDlg ->show();
-    connect(find_Btn,SIGNAL(clicked()),this,SLOT(findTextNext()));
+    connect(find_Btn_Previous,SIGNAL(clicked()),this,SLOT(findTextNext()));
     //显示对话框
 }
 void MainWindow::findTextNext(){

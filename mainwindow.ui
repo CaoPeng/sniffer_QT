@@ -20,13 +20,10 @@
       <item>
        <widget class="QLabel" name="cardLabel">
         <property name="text">
-         <string/>
+         <string>eth0:</string>
         </property>
         <property name="textFormat">
          <enum>Qt::AutoText</enum>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="mainwindow.qrc">:/images/icon.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>false</bool>
@@ -34,7 +31,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="startButton">
+       <widget class="QPushButton" name="selectCardButton">
         <property name="text">
          <string>&amp;开始</string>
         </property>
@@ -86,7 +83,14 @@
       <item>
        <widget class="QPushButton" name="stopButton">
         <property name="text">
-         <string>&amp;停止</string>
+         <string>&amp;Stop</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="startButton">
+        <property name="text">
+         <string>&amp;Start</string>
         </property>
        </widget>
       </item>

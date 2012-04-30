@@ -14,6 +14,7 @@ class QProcess;
 ////2012-4-12 add QProcess
 class QLineEdit;
 
+
 namespace Ui {
     class MainWindow;
 }
