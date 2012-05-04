@@ -2,20 +2,21 @@
 #include "ui_mainwindow.h"
 #include "startdialog.h"
 #include "mainwindow.h"
-#include <QDomDocument>
+//#include <QDomDocument>
 #include <QFile>
 #include <QtGui>
+#include <QTextCursor>
 ////2012-4-12 higlighter
 #include "highlighter.h"
 ////2012-4-12 higlighter
 
-#include <QTextBrowser>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-   this->setWindowIcon(QIcon("a.png"));
+    isSaved = false;
+    curFile = "untitled";
     ui->setupUi(this);
     createActions();
     createMenus();
@@ -56,7 +57,7 @@ void MainWindow::createActions()
     newAction->setIcon(QIcon(":/images/new.png"));
     newAction->setShortcut(QKeySequence::New);
     newAction->setStatusTip(tr("New a new MessageBox..."));
-//    connect(newAction,SIGNAL(triggered()),this,SLOT(newFile()));
+    connect(newAction,SIGNAL(triggered()),this,SLOT(newFile()));
 
     openAction = new QAction(tr("&open"),this);
     openAction->setIcon(QIcon(":/images/open.png"));
@@ -68,7 +69,7 @@ void MainWindow::createActions()
     saveAction->setIcon(QIcon(":/images/save.png"));
     saveAction->setShortcut(QKeySequence::Save);
     saveAction->setStatusTip(tr("Save MessageBox.."));
-    connect(saveAction,SIGNAL(triggered()),this,SLOT(about()));
+    connect(saveAction,SIGNAL(triggered()),this,SLOT(saveFiles()));
 
     saveAsAction = new QAction(tr("Save &As"),this);
     saveAsAction->setIcon(QIcon(":/images/open.png"));
@@ -203,9 +204,10 @@ void MainWindow::about()
 
 void MainWindow::newFile()
 {
-    if(okToContinue()){
-        about();
-    }
+    ui->textBrowser->clear();
+//    if(okToContinue()){
+//        about();
+//    }
 }
 
 void MainWindow::selectCard()
@@ -281,10 +283,114 @@ void MainWindow::findText(){
 }
 void MainWindow::findTextNext(){
     QString findStr = find_textLineEdit->text();
-
     if(!ui->textBrowser->find(findStr,QTextDocument::FindBackward)){
         QMessageBox::warning(this,tr("Find"),tr("No Find %1")
                              .arg(findStr));
+
     }
 }
 ////2012-4-25 findText
+////2012-5-03 save files
+void MainWindow::saveFiles(){
+    if(ui->textBrowser->document()->isModified()){
+        QMessageBox box;
+        box.setWindowTitle(tr("Warning"));
+        box.setIcon(QMessageBox::Warning);
+        box.setText(curFile+tr("Does not saved ,saved?"));
+        box.setStandardButtons(QMessageBox::Yes|QMessageBox::No);
+        if(box.exec() == QMessageBox::Yes){
+            //do_file_save()
+            if(isSaved){
+                QFile file(curFile);
+                if(file.open(QIODevice::ReadWrite|QIODevice::Text )){
+                    QMessageBox::warning(this,
+                                         tr("Save Files"),
+                                         tr("Cann't save %1:\n %2")
+                                         .arg(curFile)
+                                         .arg(file.errorString()));
+                }
+                QTextStream out(&file);
+                out<<ui->textBrowser->toPlainText();
+                isSaved = true;
+                curFile = QFileInfo(fileName).canonicalFilePath();
+            }else{
+                fileName = QFileDialog::getSaveFileName(this,
+                                                        tr("Save As..."),
+                                                        curFile);
+                if(!fileName.isEmpty()){
+                    QFile file(fileName);
+                    //if(file.open(QFile::WriteOther|QFile::Text)){
+                    if(file.open(QIODevice::ReadWrite|QIODevice::Text)){
+                        QMessageBox::warning(this,
+                                             tr("Save Files"),
+                                             tr("Cann't save %1:\n %2")
+                                             .arg(fileName)
+                                             .arg(file.errorString()));
+                    }
+                    QTextStream out(&file);
+                    out<<ui->textBrowser->toPlainText();
+                    isSaved = true;
+                    curFile = QFileInfo(fileName).canonicalFilePath();
+                }
+            }
+        }
+    }
+}
+
+void MainWindow::loadFiles(){
+    if(ui->textBrowser->document()->isModified()){
+        QMessageBox box;
+        box.setWindowTitle(tr("Warning"));
+        box.setIcon(QMessageBox::Warning);
+        box.setText(curFile+tr("Does not saved ,saved?"));
+        box.setStandardButtons(QMessageBox::Yes|QMessageBox::No);
+        if(box.exec() == QMessageBox::Yes){
+            //do_file_save()
+            if(isSaved){
+                QFile file(curFile);
+                if(file.open(QIODevice::ReadWrite|QIODevice::Text )){
+                    QMessageBox::warning(this,
+                                         tr("Save Files"),
+                                         tr("Cann't save %1:\n %2")
+                                         .arg(curFile)
+                                         .arg(file.errorString()));
+                }
+                QTextStream out(&file);
+                out<<ui->textBrowser->toPlainText();
+                isSaved = true;
+                curFile = QFileInfo(fileName).canonicalFilePath();
+            }else{
+                fileName = QFileDialog::getSaveFileName(this,
+                                                        tr("Save As..."),
+                                                        curFile);
+                if(!fileName.isEmpty()){
+                    QFile file(fileName);
+                    //if(file.open(QFile::WriteOther|QFile::Text)){
+                    if(file.open(QIODevice::ReadWrite|QIODevice::Text)){
+                        QMessageBox::warning(this,
+                                             tr("Save Files"),
+                                             tr("Cann't save %1:\n %2")
+                                             .arg(fileName)
+                                             .arg(file.errorString()));
+                    }
+                    QTextStream out(&file);
+                    out<<ui->textBrowser->toPlainText();
+                    isSaved = true;
+                    curFile = QFileInfo(fileName).canonicalFilePath();
+                }//save the files
+            }//isSaved == true
+        }// slect QMessageBox::No
+    }//ui->textBrowser is modified.
+    QString openFileName = QFileDialog::getOpenFileName(this);
+    QFile file(fileName);
+    if(!file.open(QFile::ReadOnly | QFile::Text)){
+        QMessageBox::warning(this,tr(" 读取文件"),tr("无法读取文件 %1:\n%2.")
+                             .arg(fileName)
+                             .arg(file.errorString()));
+  //  return false;     //如果打开文件失败，弹出对话框，并返回
+    }
+    QTextStream in(&file);
+    ui->textBrowser->setText(in.readAll());
+    //ui->textEdit->setText(in.readAll());     //将文件中的所有内容都写到文本编辑器中
+}
+////2012-5-03 save files

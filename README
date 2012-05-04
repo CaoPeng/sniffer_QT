@@ -4,3 +4,7 @@ Graphical interface with QT
 增加了find函数，可以实现查找textBrowser当中的文本，
 //2012-4-25
 修正了find函数，添加了next 和prevoius 两个按钮
+//2012-5-04
+继续修正find函数，
+添加saveFiles函数，以文本形式保存嗅探得出的数据
+添加loadFiles函数，以文本形式载入嗅探的数据

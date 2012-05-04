@@ -13,7 +13,7 @@ HEADERS += mainwindow.h \
 FORMS += mainwindow.ui \
     startdialog.ui
 RESOURCES = mainwindow.qrc
-RC_FILE = mainwindow.rc
+#RC_FILE = mainwindow.rc
 LIBS += -L/usr/local/lib \
     -lpcap
-QT += xml
+#QT += xml

@@ -6,6 +6,7 @@
 #include <QString>
 #include <QtGui/QTextBrowser>
 #include <QtGui/QTextBrowser>
+#include <QTextCursor>
 
 ////2012-4-12 higlighter
 class Highlighter;
@@ -41,8 +42,17 @@ private slots:
     void findText();
     void findTextNext();
     ////2012-4-25 findText
+    ////2012-5-03 save files
+    void saveFiles();
+    void loadFiles();
+    ////2012-5-03 save files
 
 private:
+    ////2012-5-03 save files
+    bool isSaved;
+    QString curFile;
+    QString fileName;
+    ////2012-5-03 save files
     QString dev;
     ////2012-4-12 higlighter
     Highlighter *highlighter;

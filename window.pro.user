@@ -76,7 +76,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-peHqQjeGPA,guid=3a86f1f08c13c2abc0fdf7274f9e4d3d</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-wd6CMkSfwJ,guid=b4a558493b0641bb8e8d7eeb4fa281ea</value>
     <value type="QString">DEFAULTS_PATH=/usr/share/gconf/gnome.default.path</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
@@ -84,32 +84,32 @@
     <value type="QString">GDM_KEYBOARD_LAYOUT=us</value>
     <value type="QString">GDM_LANG=en_US.utf8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-mU7PDb</value>
-    <value type="QString">GNOME_KEYRING_PID=1467</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-ebtVnf</value>
+    <value type="QString">GNOME_KEYRING_PID=1198</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
-    <value type="QString">HOME=/home/cp</value>
+    <value type="QString">HOME=/home/caopeng</value>
     <value type="QString">LANG=en_US.utf8</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator</value>
-    <value type="QString">LOGNAME=cp</value>
+    <value type="QString">LOGNAME=caopeng</value>
     <value type="QString">MANDATORY_PATH=/usr/share/gconf/gnome.mandatory.path</value>
-    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-cp</value>
+    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-caopeng</value>
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
-    <value type="QString">PWD=/home/cp</value>
+    <value type="QString">PWD=/home/caopeng</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
-    <value type="QString">SESSION_MANAGER=local/cp-laptop:@/tmp/.ICE-unix/1485,unix/cp-laptop:/tmp/.ICE-unix/1485</value>
+    <value type="QString">SESSION_MANAGER=local/caopeng-desktop:@/tmp/.ICE-unix/1232,unix/caopeng-desktop:/tmp/.ICE-unix/1232</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1519</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-mU7PDb/ssh</value>
-    <value type="QString">USER=cp</value>
-    <value type="QString">USERNAME=cp</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-cp-NaC6gP/database</value>
+    <value type="QString">SSH_AGENT_PID=1266</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-ebtVnf/ssh</value>
+    <value type="QString">USER=caopeng</value>
+    <value type="QString">USERNAME=caopeng</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-caopeng-3djNdy/database</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg/xdg-gnome:/etc/xdg</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=62b4e30506c70449e13ff9e14f8b1102-1335774525.450090-346733792</value>
+    <value type="QString">XDG_SESSION_COOKIE=a614fdf95e9d99438086e8f74fa0a38e-1336050154.164987-1253380172</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
-    <value type="QString">/home/cp/sniffer_QT/window.pro</value>
+    <value type="QString">/home/caopeng/CaoPeng-sniffer_QT-649b536/window.pro</value>
     <value type="QString">-spec</value>
     <value type="QString">linux-g++</value>
     <value type="QString">-r</value>
@@ -117,7 +117,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString">/usr/bin/qmake-qt4</value>
    <value key="abstractProcess.enabled" type="bool">false</value>
-   <value key="abstractProcess.workingDirectory" type="QString">/home/cp/sniffer_QT</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/caopeng/CaoPeng-sniffer_QT-649b536</value>
   </valuemap>
  </data>
  <data>
@@ -125,7 +125,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-peHqQjeGPA,guid=3a86f1f08c13c2abc0fdf7274f9e4d3d</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-wd6CMkSfwJ,guid=b4a558493b0641bb8e8d7eeb4fa281ea</value>
     <value type="QString">DEFAULTS_PATH=/usr/share/gconf/gnome.default.path</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
@@ -133,29 +133,29 @@
     <value type="QString">GDM_KEYBOARD_LAYOUT=us</value>
     <value type="QString">GDM_LANG=en_US.utf8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-mU7PDb</value>
-    <value type="QString">GNOME_KEYRING_PID=1467</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-ebtVnf</value>
+    <value type="QString">GNOME_KEYRING_PID=1198</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
-    <value type="QString">HOME=/home/cp</value>
+    <value type="QString">HOME=/home/caopeng</value>
     <value type="QString">LANG=en_US.utf8</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator</value>
-    <value type="QString">LOGNAME=cp</value>
+    <value type="QString">LOGNAME=caopeng</value>
     <value type="QString">MANDATORY_PATH=/usr/share/gconf/gnome.mandatory.path</value>
-    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-cp</value>
+    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-caopeng</value>
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
-    <value type="QString">PWD=/home/cp</value>
+    <value type="QString">PWD=/home/caopeng</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
-    <value type="QString">SESSION_MANAGER=local/cp-laptop:@/tmp/.ICE-unix/1485,unix/cp-laptop:/tmp/.ICE-unix/1485</value>
+    <value type="QString">SESSION_MANAGER=local/caopeng-desktop:@/tmp/.ICE-unix/1232,unix/caopeng-desktop:/tmp/.ICE-unix/1232</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1519</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-mU7PDb/ssh</value>
-    <value type="QString">USER=cp</value>
-    <value type="QString">USERNAME=cp</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-cp-NaC6gP/database</value>
+    <value type="QString">SSH_AGENT_PID=1266</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-ebtVnf/ssh</value>
+    <value type="QString">USER=caopeng</value>
+    <value type="QString">USERNAME=caopeng</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-caopeng-3djNdy/database</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg/xdg-gnome:/etc/xdg</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=62b4e30506c70449e13ff9e14f8b1102-1335774525.450090-346733792</value>
+    <value type="QString">XDG_SESSION_COOKIE=a614fdf95e9d99438086e8f74fa0a38e-1336050154.164987-1253380172</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
@@ -163,7 +163,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString">/usr/bin/make</value>
    <value key="abstractProcess.enabled" type="bool">true</value>
-   <value key="abstractProcess.workingDirectory" type="QString">/home/cp/sniffer_QT</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/caopeng/CaoPeng-sniffer_QT-649b536</value>
   </valuemap>
  </data>
  <data>
@@ -171,7 +171,7 @@
   <valuemap type="QVariantMap">
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString">Debug</value>
    <valuelist key="abstractProcess.Environment" type="QVariantList">
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-peHqQjeGPA,guid=3a86f1f08c13c2abc0fdf7274f9e4d3d</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-Ss3u7SwZPW,guid=f3a36650a10dbd30721170d74fa206e9</value>
     <value type="QString">DEFAULTS_PATH=/usr/share/gconf/gnome.default.path</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
@@ -179,29 +179,29 @@
     <value type="QString">GDM_KEYBOARD_LAYOUT=us</value>
     <value type="QString">GDM_LANG=en_US.utf8</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-mU7PDb</value>
-    <value type="QString">GNOME_KEYRING_PID=1467</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-BiCdLB</value>
+    <value type="QString">GNOME_KEYRING_PID=1212</value>
     <value type="QString">GTK_MODULES=canberra-gtk-module</value>
-    <value type="QString">HOME=/home/cp</value>
+    <value type="QString">HOME=/home/caopeng</value>
     <value type="QString">LANG=en_US.utf8</value>
     <value type="QString">LD_LIBRARY_PATH=/usr/lib/qtcreator</value>
-    <value type="QString">LOGNAME=cp</value>
+    <value type="QString">LOGNAME=caopeng</value>
     <value type="QString">MANDATORY_PATH=/usr/share/gconf/gnome.mandatory.path</value>
-    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-cp</value>
+    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-caopeng</value>
     <value type="QString">PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</value>
-    <value type="QString">PWD=/home/cp</value>
+    <value type="QString">PWD=/home/caopeng</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
-    <value type="QString">SESSION_MANAGER=local/cp-laptop:@/tmp/.ICE-unix/1485,unix/cp-laptop:/tmp/.ICE-unix/1485</value>
+    <value type="QString">SESSION_MANAGER=local/caopeng-desktop:@/tmp/.ICE-unix/1230,unix/caopeng-desktop:/tmp/.ICE-unix/1230</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SPEECHD_PORT=7560</value>
-    <value type="QString">SSH_AGENT_PID=1519</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-mU7PDb/ssh</value>
-    <value type="QString">USER=cp</value>
-    <value type="QString">USERNAME=cp</value>
-    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-cp-NaC6gP/database</value>
+    <value type="QString">SSH_AGENT_PID=1264</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-BiCdLB/ssh</value>
+    <value type="QString">USER=caopeng</value>
+    <value type="QString">USERNAME=caopeng</value>
+    <value type="QString">XAUTHORITY=/var/run/gdm/auth-for-caopeng-rdzf2v/database</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg/xdg-gnome:/etc/xdg</value>
     <value type="QString">XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/</value>
-    <value type="QString">XDG_SESSION_COOKIE=62b4e30506c70449e13ff9e14f8b1102-1335774525.450090-346733792</value>
+    <value type="QString">XDG_SESSION_COOKIE=a614fdf95e9d99438086e8f74fa0a38e-1336018665.452898-1499187470</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">true</value>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
@@ -210,7 +210,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString">/usr/bin/make</value>
    <value key="abstractProcess.enabled" type="bool">true</value>
-   <value key="abstractProcess.workingDirectory" type="QString">/home/cp/sniffer_QT</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/caopeng/CaoPeng-sniffer_QT-649b536</value>
    <value key="cleanConfig" type="bool">true</value>
    <valuelist key="makeargs" type="QVariantList">
     <value type="QString">clean</value>
