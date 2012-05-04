@@ -27,6 +27,11 @@ public:
     ~MainWindow();
     static QString str;
     QString strcontext;
+    ////2012-5-4 save files version 2.0
+    void doFileSaveOrNot();
+    void saveFile(const QString &fileName);
+    void loadFile(const QString &fileName);
+    ////2012-5-4 save files version 2.0
 protected:
     void changeEvent(QEvent *e);
 
@@ -43,15 +48,16 @@ private slots:
     void findTextNext();
     ////2012-4-25 findText
     ////2012-5-03 save files
-    void saveFiles();
-    void loadFiles();
+    void doSaveFiles();
+    void saveAsFiles();
+    void openFiles();
     ////2012-5-03 save files
 
 private:
     ////2012-5-03 save files
     bool isSaved;
     QString curFile;
-    QString fileName;
+    //QString fileName;
     ////2012-5-03 save files
     QString dev;
     ////2012-4-12 higlighter
