@@ -13,3 +13,6 @@ Graphical interface with QT
 优化了相应代码。
 添加了判断是否保存文件函数doFileSaveOrNot
 添加了openFiles槽
+//2012-5-05
+添加了HelpBrowser类
+用于实现以html格式来显示帮助。
