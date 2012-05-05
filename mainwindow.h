@@ -7,6 +7,7 @@
 #include <QtGui/QTextBrowser>
 #include <QtGui/QTextBrowser>
 #include <QTextCursor>
+#include "helpbrowser.h"
 
 ////2012-4-12 higlighter
 class Highlighter;
@@ -14,6 +15,7 @@ class Highlighter;
 class QProcess;
 ////2012-4-12 add QProcess
 class QLineEdit;
+
 
 
 namespace Ui {
@@ -52,6 +54,10 @@ private slots:
     void saveAsFiles();
     void openFiles();
     ////2012-5-03 save files
+    ////2012-5-05 help files
+    void help();
+    ////2012-5-05 help files
+
 
 private:
     ////2012-5-03 save files

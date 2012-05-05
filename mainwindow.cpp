@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 #include "startdialog.h"
 #include "mainwindow.h"
-//#include <QDomDocument>
 #include <QFile>
 #include <QtGui>
 #include <QTextCursor>
@@ -119,7 +118,7 @@ void MainWindow::createActions()
    // aboutAction->setIcon(QIcon(":/images/cut.png"));
    // aboutAction->setShortcut(QKeySequence::New);
     aboutAction->setStatusTip(tr("About actions.."));
-    connect(aboutAction,SIGNAL(triggered()),this,SLOT(about()));
+    connect(aboutAction,SIGNAL(triggered()),this,SLOT(help()));
 
 //    QAction *FAQAction;
     FAQAction = new QAction(tr("FAQ's"),this);
@@ -355,3 +354,8 @@ void MainWindow::loadFile(const QString &fileName){
     setWindowTitle(curFile);
 }
 ////2012-5-4 save files version 2.0
+////2012-5-05 help files
+void MainWindow::help(){
+    HelpBrowser::showPage("index.html");
+}
+////2012-5-05 help files

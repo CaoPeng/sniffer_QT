@@ -6,14 +6,16 @@ TEMPLATE = app
 SOURCES += main.cpp \
     mainwindow.cpp \
     startdialog.cpp \
-    highlighter.cpp
+    highlighter.cpp \
+    helpbrowser.cpp
 HEADERS += mainwindow.h \
     startdialog.h \
-    highlighter.h
+    highlighter.h \
+    helpbrowser.h
 FORMS += mainwindow.ui \
     startdialog.ui
 RESOURCES = mainwindow.qrc
-#RC_FILE = mainwindow.rc
+
+# RC_FILE = mainwindow.rc
 LIBS += -L/usr/local/lib \
     -lpcap
-#QT += xml
