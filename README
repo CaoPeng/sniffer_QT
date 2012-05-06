@@ -16,3 +16,6 @@ Graphical interface with QT
 //2012-5-05
 添加了HelpBrowser类
 用于实现以html格式来显示帮助。
+//2012-5-6
+编写和html格式的帮助文档，
+只编写了安装Libpcap部分
