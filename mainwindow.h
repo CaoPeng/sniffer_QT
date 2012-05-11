@@ -90,8 +90,6 @@ private:
 
     //Menu
     QMenu *fileMenu;
-    QMenu *editMenu;
-    QMenu *toolMenu;
     QMenu *helpMenu;
     //Actions
     QAction *separatorAction;
@@ -104,15 +102,11 @@ private:
     QAction *cutAction;
     QAction *pasteAction;
     QAction *findAction;
-    QAction *firstAction;
-    QAction *endAction;
-    QAction *nextAction;
-    QAction *previousAction;
 
     //helpMenu
+    QAction *aboutQTAction;
     QAction *aboutAction;
     QAction *FAQAction;
-    QAction *WebsiteAction;
     QAction *downloadAction;
     QAction *WiKiAction;
     //QToolBar

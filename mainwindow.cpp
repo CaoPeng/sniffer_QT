@@ -95,24 +95,14 @@ void MainWindow::createActions()
     connect(findAction,SIGNAL(triggered()),this,SLOT(findText()));
     ////2012-4-25
 
-    firstAction = new QAction(tr("First Packet"),this);
-    firstAction->setIcon(QIcon(":/images/first.png"));
-
-    endAction = new QAction(tr("End Packet"),this);
-    endAction->setIcon(QIcon(":/images/end.png"));
-
-    previousAction = new QAction(tr("Previous..."),this);
-    previousAction->setIcon(QIcon(":/images/previous.png"));
-
-    nextAction = new QAction(tr("Next..."),this);
-    nextAction->setIcon(QIcon(":/images/next.png"));
-
-
+    aboutQTAction = new QAction(tr("&About QT"),this);
+    aboutQTAction->setStatusTip(tr("About QT program.."));
+    connect(aboutQTAction,SIGNAL(triggered()),qApp,SLOT(aboutQt()));
 
     exitAction = new QAction(tr("&Exit"),this);
     exitAction->setShortcut(QKeySequence::Quit);
     exitAction->setStatusTip(tr("Exit This MainWindow.."));
-    connect(exitAction,SIGNAL(triggered()),qApp,SLOT(aboutQt()));
+    connect(exitAction,SIGNAL(triggered()),qApp,SLOT(quit()));
 
     aboutAction = new QAction(tr("&About This"),this);
    // aboutAction->setIcon(QIcon(":/images/cut.png"));
@@ -123,7 +113,7 @@ void MainWindow::createActions()
 //    QAction *FAQAction;
     FAQAction = new QAction(tr("FAQ's"),this);
 //    QAction *WebsiteAction;
-    WebsiteAction = new QAction(tr("&Website"),this);
+//    WebsiteAction = new QAction(tr("&Website"),this);
 //    QAction *downloadAction;
     downloadAction = new QAction(tr("&Downloads"),this);
 //    QAction *WiKiAction;
@@ -140,15 +130,11 @@ void MainWindow::createMenus()
     separatorAction = fileMenu->addSeparator();
     fileMenu->addAction(exitAction);
 
-    editMenu = menuBar()->addMenu(tr("&Edit"));
-
-    toolMenu = menuBar()->addMenu(tr("&Tools"));
-
     helpMenu = menuBar()->addMenu(tr("&Help"));
     helpMenu->addAction(aboutAction);
+    helpMenu->addAction(aboutQTAction);
     helpMenu->addAction(FAQAction);
     helpMenu->addSeparator();//separator The menu..
-    helpMenu->addAction(WebsiteAction);
     helpMenu->addAction(downloadAction);
     helpMenu->addAction(WiKiAction);
 }
@@ -168,11 +154,6 @@ void MainWindow::createToolBars()
     editToolBar->addAction(copyAction);
     editToolBar->addAction(cutAction);
     editToolBar->addAction(pasteAction);
-    editToolBar->addSeparator();
-    editToolBar->addAction(firstAction);
-    editToolBar->addAction(endAction);
-    editToolBar->addAction(previousAction);
-    editToolBar->addAction(nextAction);
 }
 bool MainWindow::okToContinue()
 {
