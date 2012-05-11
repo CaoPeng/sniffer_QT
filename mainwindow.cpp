@@ -278,6 +278,7 @@ void MainWindow::findText(){
     //新建一个垂直布局管理器，并将行编辑器和按钮加入其中
     findDlg ->show();
     connect(find_Btn_Previous,SIGNAL(clicked()),this,SLOT(findTextNext()));
+    connect(find_Btn_Next,SIGNAL(clicked()),this,SLOT(findTextPrevious()));
     //显示对话框
 }
 void MainWindow::findTextNext(){
@@ -285,7 +286,13 @@ void MainWindow::findTextNext(){
     if(!ui->textBrowser->find(findStr,QTextDocument::FindBackward)){
         QMessageBox::warning(this,tr("Find"),tr("No Find %1")
                              .arg(findStr));
-
+    }
+}
+void MainWindow::findTextPrevious(){
+    QString findStr = find_textLineEdit->text();
+    if(!ui->textBrowser->find(findStr/*,QTextDocument::FindBackward*/)){
+        QMessageBox::warning(this,tr("Find"),tr("No Find %1")
+                             .arg(findStr));
     }
 }
 ////2012-4-25 findText

@@ -48,6 +48,7 @@ private slots:
     ////2012-4-25 findText
     void findText();
     void findTextNext();
+    void findTextPrevious();
     ////2012-4-25 findText
     ////2012-5-03 save files
     void doSaveFiles();
