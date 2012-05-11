@@ -19,3 +19,5 @@ Graphical interface with QT
 //2012-5-6
 编写和html格式的帮助文档，
 只编写了安装Libpcap部分
+//2012-5-11
+编写了向后查找函数findPrevious
