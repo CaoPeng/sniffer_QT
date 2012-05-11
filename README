@@ -21,3 +21,13 @@ Graphical interface with QT
 只编写了安装Libpcap部分
 //2012-5-11
 编写了向后查找函数findPrevious
+
+
+
+/*
+git branch newmaster
+git checkout newmaster
+git add 'modified filesname'
+git commit [-a] -m 'tags'
+git push -u origin newmaster
+*/
