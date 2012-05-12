@@ -19,3 +19,18 @@ Graphical interface with QT
 //2012-5-6
 编写和html格式的帮助文档，
 只编写了安装Libpcap部分
+//2012-5-11
+编写了向后查找函数findPrevious
+
+//2012-5-12
+修正重新开始嗅探，保存原嗅探数据函数。
+修正特殊代码高亮显示。
+
+
+/*
+git branch newmaster
+git checkout newmaster
+git add 'modified filesname'
+git commit [-a] -m 'tags'
+git push -u origin newmaster
+*/

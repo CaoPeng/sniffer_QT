@@ -48,6 +48,7 @@ private slots:
     ////2012-4-25 findText
     void findText();
     void findTextNext();
+    void findTextPrevious();
     ////2012-4-25 findText
     ////2012-5-03 save files
     void doSaveFiles();
@@ -82,15 +83,13 @@ private:
     void createActions();
     void createMenus();
     void createToolBars();
-    bool okToContinue();
+//    bool okToContinue();
     ////2012-4-12 higlighter
     void stepEditor();
     ////2012-4-12 higlighter
 
     //Menu
     QMenu *fileMenu;
-    QMenu *editMenu;
-    QMenu *toolMenu;
     QMenu *helpMenu;
     //Actions
     QAction *separatorAction;
@@ -103,15 +102,11 @@ private:
     QAction *cutAction;
     QAction *pasteAction;
     QAction *findAction;
-    QAction *firstAction;
-    QAction *endAction;
-    QAction *nextAction;
-    QAction *previousAction;
 
     //helpMenu
+    QAction *aboutQTAction;
     QAction *aboutAction;
     QAction *FAQAction;
-    QAction *WebsiteAction;
     QAction *downloadAction;
     QAction *WiKiAction;
     //QToolBar

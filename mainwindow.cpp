@@ -95,43 +95,25 @@ void MainWindow::createActions()
     connect(findAction,SIGNAL(triggered()),this,SLOT(findText()));
     ////2012-4-25
 
-    firstAction = new QAction(tr("First Packet"),this);
-    firstAction->setIcon(QIcon(":/images/first.png"));
-
-    endAction = new QAction(tr("End Packet"),this);
-    endAction->setIcon(QIcon(":/images/end.png"));
-
-    previousAction = new QAction(tr("Previous..."),this);
-    previousAction->setIcon(QIcon(":/images/previous.png"));
-
-    nextAction = new QAction(tr("Next..."),this);
-    nextAction->setIcon(QIcon(":/images/next.png"));
-
-
+    aboutQTAction = new QAction(tr("&About QT"),this);
+    aboutQTAction->setStatusTip(tr("About QT program.."));
+    connect(aboutQTAction,SIGNAL(triggered()),qApp,SLOT(aboutQt()));
 
     exitAction = new QAction(tr("&Exit"),this);
     exitAction->setShortcut(QKeySequence::Quit);
     exitAction->setStatusTip(tr("Exit This MainWindow.."));
-    connect(exitAction,SIGNAL(triggered()),qApp,SLOT(aboutQt()));
+    connect(exitAction,SIGNAL(triggered()),qApp,SLOT(quit()));
 
     aboutAction = new QAction(tr("&About This"),this);
-   // aboutAction->setIcon(QIcon(":/images/cut.png"));
-   // aboutAction->setShortcut(QKeySequence::New);
-    aboutAction->setStatusTip(tr("About actions.."));
+    aboutAction->setStatusTip(tr("Help Document"));
     connect(aboutAction,SIGNAL(triggered()),this,SLOT(help()));
 
-//    QAction *FAQAction;
     FAQAction = new QAction(tr("FAQ's"),this);
-//    QAction *WebsiteAction;
-    WebsiteAction = new QAction(tr("&Website"),this);
-//    QAction *downloadAction;
     downloadAction = new QAction(tr("&Downloads"),this);
-//    QAction *WiKiAction;
     WiKiAction = new QAction(tr("WiKi"),this);
 }
 
-void MainWindow::createMenus()
-{
+void MainWindow::createMenus(){
     fileMenu = menuBar()->addMenu(tr("&File"));
     fileMenu->addAction(newAction);
     fileMenu->addAction(openAction);
@@ -140,55 +122,40 @@ void MainWindow::createMenus()
     separatorAction = fileMenu->addSeparator();
     fileMenu->addAction(exitAction);
 
-    editMenu = menuBar()->addMenu(tr("&Edit"));
-
-    toolMenu = menuBar()->addMenu(tr("&Tools"));
-
     helpMenu = menuBar()->addMenu(tr("&Help"));
     helpMenu->addAction(aboutAction);
+    helpMenu->addAction(aboutQTAction);
     helpMenu->addAction(FAQAction);
     helpMenu->addSeparator();//separator The menu..
-    helpMenu->addAction(WebsiteAction);
     helpMenu->addAction(downloadAction);
     helpMenu->addAction(WiKiAction);
 }
 
 
-void MainWindow::createToolBars()
-{
+void MainWindow::createToolBars(){
     fileToolBar = addToolBar(tr("&File"));
     fileToolBar->addAction(newAction);
-    //fileToolBar->addAction(save)
-    ////2012-4-25
+
     fileToolBar->addAction(findAction);
-    ////2012-4-25
     fileToolBar->addAction(saveAction);
 
     editToolBar = addToolBar(tr("&Edit"));
     editToolBar->addAction(copyAction);
     editToolBar->addAction(cutAction);
     editToolBar->addAction(pasteAction);
-    editToolBar->addSeparator();
-    editToolBar->addAction(firstAction);
-    editToolBar->addAction(endAction);
-    editToolBar->addAction(previousAction);
-    editToolBar->addAction(nextAction);
 }
-bool MainWindow::okToContinue()
+void MainWindow::newFile()
 {
-    if(isWindowModified()){
+    if(!isWindowModified()){
         int r = QMessageBox::warning(this,tr("Warning"),
                                      tr("The Document has been modified\n"
                                         "Do you want to save you changes"),
-                                     QMessageBox::Yes|QMessageBox::No
-                                     |QMessageBox::Cancel);
+                                     QMessageBox::Yes|QMessageBox::No);
         if(r == QMessageBox::Yes){
-            //.....
-        }else if(r == QMessageBox::Cancel){
-            //.....
+            doSaveFiles();
         }
     }
-    return true;
+    ui->textBrowser->clear();
 }
 
 
@@ -199,14 +166,6 @@ void MainWindow::about()
                           "<p>Copyright &copy;2011 Software Inc."
                           "<p>This is my First Dialog"
                           "<p>My first Menu..."));
-}
-
-void MainWindow::newFile()
-{
-    ui->textBrowser->clear();
-//    if(okToContinue()){
-//        about();
-//    }
 }
 
 void MainWindow::selectCard()
@@ -278,6 +237,7 @@ void MainWindow::findText(){
     //新建一个垂直布局管理器，并将行编辑器和按钮加入其中
     findDlg ->show();
     connect(find_Btn_Previous,SIGNAL(clicked()),this,SLOT(findTextNext()));
+    connect(find_Btn_Next,SIGNAL(clicked()),this,SLOT(findTextPrevious()));
     //显示对话框
 }
 void MainWindow::findTextNext(){
@@ -285,7 +245,13 @@ void MainWindow::findTextNext(){
     if(!ui->textBrowser->find(findStr,QTextDocument::FindBackward)){
         QMessageBox::warning(this,tr("Find"),tr("No Find %1")
                              .arg(findStr));
-
+    }
+}
+void MainWindow::findTextPrevious(){
+    QString findStr = find_textLineEdit->text();
+    if(!ui->textBrowser->find(findStr/*,QTextDocument::FindBackward*/)){
+        QMessageBox::warning(this,tr("Find"),tr("No Find %1")
+                             .arg(findStr));
     }
 }
 ////2012-4-25 findText
@@ -312,7 +278,7 @@ void MainWindow::saveAsFiles(){
 }
 ////2012-5-03 save files
 ////2012-5-4 save files version 2.0
-void MainWindow::doFileSaveOrNot(){   
+void MainWindow::doFileSaveOrNot(){
     if(ui->textBrowser->document()->isModified()){
         QMessageBox box;
         box.setWindowTitle(tr("Warning"));

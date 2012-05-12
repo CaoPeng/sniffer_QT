@@ -10,16 +10,13 @@
      keywordFormat.setForeground(Qt::darkBlue);
      keywordFormat.setFontWeight(QFont::Bold);
      QStringList keywordPatterns;
-     keywordPatterns << "\\bchar\\b" << "\\bclass\\b" << "\\bconst\\b"
-                     << "\\bdouble\\b" << "\\benum\\b" << "\\bexplicit\\b"
-                     << "\\bfriend\\b" << "\\binline\\b" << "\\bint\\b"
-                     << "\\blong\\b" << "\\bnamespace\\b" << "\\boperator\\b"
-                     << "\\bprivate\\b" << "\\bprotected\\b" << "\\bpublic\\b"
-                     << "\\bshort\\b" << "\\bsignals\\b" << "\\bsigned\\b"
-                     << "\\bslots\\b" << "\\bstatic\\b" << "\\bstruct\\b"
-                     << "\\btemplate\\b" << "\\btypedef\\b" << "\\btypename\\b"
-                     << "\\bunion\\b" << "\\bunsigned\\b" << "\\bvirtual\\b"
-                     << "\\bvoid\\b" << "\\bvolatile\\b"<<"\\bError\\b";
+     keywordPatterns << "\\bEther_shost\\b" << "\\bEther_dhost\\b" << "\\bFIN\\b"
+                     << "\\bSYN\\b" << "\\bRST\\b" << "\\bPUSH\\b"
+                     << "\\bACK\\b" << "\\bURG\\b" << "\\bECE\\b"
+                     << "\\bCWR\\b" << "\\bHTTP\\b" << "\\bTCP\\b"
+                     << "\\bUDP\\b" << "\\bARP\\b" << "\\bRARP\\b"
+                     << "\\bIP\\b" << "\\bAccept\\b" << "\\bGET\\b"
+                     <<"\\bError\\b";
      foreach (const QString &pattern, keywordPatterns) {
          rule.pattern = QRegExp(pattern);
          rule.format = keywordFormat;
@@ -40,7 +37,7 @@
      multiLineCommentFormat.setForeground(Qt::red);
 
      quotationFormat.setForeground(Qt::darkGreen);
-     rule.pattern = QRegExp("\".*\"");
+     rule.pattern = QRegExp("\\b[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\b");
      rule.format = quotationFormat;
      highlightingRules.append(rule);
 
