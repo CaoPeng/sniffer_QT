@@ -31,6 +31,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ////2012-4-16 QProcess
     connect(ui->stopButton,SIGNAL(clicked()),cmd,SLOT(kill()));
 
+    connect(ui->comboBoxPort,SIGNAL(currentIndexChanged(int)),this,SLOT(getcomboBoxPort(int)));
+    connect(ui->comboBoxFilter,SIGNAL(currentIndexChanged(int)),this,SLOT(getcomboBoxFilter(int)));
+
 }
 
 MainWindow::~MainWindow()
@@ -108,9 +111,9 @@ void MainWindow::createActions()
     aboutAction->setStatusTip(tr("Help Document"));
     connect(aboutAction,SIGNAL(triggered()),this,SLOT(help()));
 
-    FAQAction = new QAction(tr("FAQ's"),this);
-    downloadAction = new QAction(tr("&Downloads"),this);
-    WiKiAction = new QAction(tr("WiKi"),this);
+//    FAQAction = new QAction(tr("FAQ's"),this);
+//    downloadAction = new QAction(tr("&Downloads"),this);
+//    WiKiAction = new QAction(tr("WiKi"),this);
 }
 
 void MainWindow::createMenus(){
@@ -125,12 +128,11 @@ void MainWindow::createMenus(){
     helpMenu = menuBar()->addMenu(tr("&Help"));
     helpMenu->addAction(aboutAction);
     helpMenu->addAction(aboutQTAction);
-    helpMenu->addAction(FAQAction);
-    helpMenu->addSeparator();//separator The menu..
-    helpMenu->addAction(downloadAction);
-    helpMenu->addAction(WiKiAction);
+//    helpMenu->addAction(FAQAction);
+//    helpMenu->addSeparator();//separator The menu..
+//    helpMenu->addAction(downloadAction);
+//    helpMenu->addAction(WiKiAction);
 }
-
 
 void MainWindow::createToolBars(){
     fileToolBar = addToolBar(tr("&File"));
@@ -157,7 +159,6 @@ void MainWindow::newFile()
     }
     ui->textBrowser->clear();
 }
-
 
 void MainWindow::about()
 {
@@ -198,18 +199,13 @@ void MainWindow::writeToTextBrowser(){
 }
 void MainWindow::runProcess(){
     QString countData;
-    QString portData;
-    QString filterData;
     QString argvExe = "./sniff";
     QString argvK = " -k ";
     QString argvN = " -n ";
     QString argvF = " -f ";
+    QString argvD = " -d ";
     countData = ui->numberLineEdit->text();
-    portData = ui->portLineEdit->text();
-    filterData = ui->filterLineEdit->text();
-    QString myexe = argvExe+argvK+portData+argvN+countData+argvF+filterData;
-    //QString myexenew = "./test"+" -k"+portData+" -n "+countData+" -f ip";
-  //  QString myexe = "./test -k keyword -n 10 -f ip";
+    QString myexe = argvExe+argvK+port+argvN+countData+argvF+filter;
     cmd->start(myexe);
     strData=tr("");
     ui->textBrowser->append(strData);
@@ -325,3 +321,9 @@ void MainWindow::help(){
     HelpBrowser::showPage("index.html");
 }
 ////2012-5-05 help files
+void MainWindow::getcomboBoxFilter(int filterCount){
+    filter = ui->comboBoxFilter->itemText(filterCount);
+}
+void MainWindow::getcomboBoxPort(int portCount){
+    port = ui->comboBoxPort->itemText(portCount);
+}

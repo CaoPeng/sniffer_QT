@@ -8,15 +8,12 @@
 #include <QtGui/QTextBrowser>
 #include <QTextCursor>
 #include "helpbrowser.h"
-
 ////2012-4-12 higlighter
 class Highlighter;
 ////2012-4-12 add QProcess
 class QProcess;
 ////2012-4-12 add QProcess
 class QLineEdit;
-
-
 
 namespace Ui {
     class MainWindow;
@@ -58,9 +55,13 @@ private slots:
     ////2012-5-05 help files
     void help();
     ////2012-5-05 help files
+    void getcomboBoxPort(int);
+    void getcomboBoxFilter(int);
 
 
 private:
+    QString port;
+    QString filter;
     ////2012-5-03 save files
     bool isSaved;
     QString curFile;
@@ -106,9 +107,9 @@ private:
     //helpMenu
     QAction *aboutQTAction;
     QAction *aboutAction;
-    QAction *FAQAction;
-    QAction *downloadAction;
-    QAction *WiKiAction;
+//    QAction *FAQAction;
+//    QAction *downloadAction;
+//    QAction *WiKiAction;
     //QToolBar
     QToolBar *fileToolBar;
     QToolBar *editToolBar;
